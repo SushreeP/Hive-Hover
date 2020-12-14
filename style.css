@@ -1,0 +1,60 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #000;
+}
+
+.container {
+  animation: animate 4s ease-in infinite;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hexagon {
+  position: relative;
+  width: 90px;
+  height: 105px;
+  background: #111;
+  margin: 1px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: 2s;
+}
+
+.hexagon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hexagon:hover {
+  background: #faf;
+}
+
+.row {
+  display: inline-flex;
+  margin-top: -30px;
+  margin-left: -45px;
+}
+
+.row:nth-child(even) {
+  margin-left: 1px;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
