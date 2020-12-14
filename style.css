@@ -37,6 +37,7 @@ body {
 }
 
 .hexagon:hover {
+  transition: 0s;
   background: #faf;
 }
 
